@@ -27,6 +27,7 @@ import {
   FileLock2Icon,
   LayoutDashboardIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 export const SignUpView = () => {
   const router = useRouter();
@@ -69,14 +70,6 @@ export const SignUpView = () => {
       <div className="bg-white h-screen w-full overflow-y-auto flex flex-col px-8 sm:px-16 lg:px-24 xl:px-32 relative">
         {/* Top Nav Area */}
         <div className="flex items-center justify-between pt-12 mb-12">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="bg-neutral-900 p-1.5 rounded-md">
-              <CommandIcon className="size-5 text-white" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-neutral-900">
-              ShipSpace
-            </span>
-          </Link>
           <Button
             asChild
             variant="ghost"
@@ -95,7 +88,20 @@ export const SignUpView = () => {
               onSubmit={form.handleSubmit(onSubmit)}
               className="flex flex-col gap-6"
             >
-              <div className="space-y-2 mb-4">
+              <div className="flex flex-col items-center text-center space-y-2 mb-6">
+                <Link
+                  href="/"
+                  className="mb-2 transition-transform hover:scale-105"
+                >
+                  <div className="p-1.5 rounded-md">
+                    <Image
+                      src="/shipspace.svg"
+                      alt="shipspace"
+                      width={90}
+                      height={90}
+                    />
+                  </div>
+                </Link>
                 <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
                   Create client account
                 </h1>

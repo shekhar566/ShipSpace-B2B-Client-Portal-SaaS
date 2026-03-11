@@ -11,6 +11,7 @@ import { NavbarSidebar } from "./navbarSidebar";
 import { useTRPC } from "@/trpc/client";
 import { useQuery } from "@tanstack/react-query";
 import { LogoutButton } from "@/components/LogoutButton";
+import Image from "next/image";
 
 interface NavbarItemProps {
   href: string;
@@ -47,10 +48,11 @@ export const Navbar = () => {
   const session = useQuery(trpc.auth.session.queryOptions());
 
   return (
-    <nav className="h-16 flex border-b justify-between items-center bg-white px-6">
-      <Link href="/" className="flex items-center gap-2">
-        <div className="bg-neutral-900 p-1.5 rounded-md">
-          <CommandIcon className="size-5 text-white" />
+    <nav className="h-19 flex border-b justify-between items-center bg-white px-6">
+      <Link href="/" className="flex items-center">
+        <div className="p-5.5 rounded-md px-15 pt-1.5">
+          {/* <CommandIcon className="size-5 text-white" */}
+          <Image src="/shipspace.svg" alt="shipspace" width={70} height={70} />
         </div>
         <span className="text-xl font-bold tracking-tight text-neutral-900">
           ShipSpace

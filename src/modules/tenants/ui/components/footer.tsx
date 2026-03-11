@@ -1,4 +1,5 @@
 import { CommandIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -10,7 +11,7 @@ export const Footer = () => {
         {/* Brand */}
         <div className="flex items-center gap-2 text-neutral-900">
           <div className="bg-neutral-900 p-1 rounded-md">
-            <CommandIcon className="size-4 text-white" />
+            <Image src="/arrow.svg" alt="shipspace" width={20} height={20} />
           </div>
           <span className="font-semibold tracking-tight text-lg">
             ShipSpace
