@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | ShipSpace",
   },
   description:
-    "Secure, isolated client portals and data management for modern agencies.",
+    "ShipSpace provides secure, multi-tenant client portals and data management for modern agencies. Built to streamline B2B operations and scale effortlessly.",
   keywords: [
     "B2B SaaS",
     "Client Portal",
