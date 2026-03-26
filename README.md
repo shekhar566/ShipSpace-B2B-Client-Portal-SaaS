@@ -1,4 +1,12 @@
-# 🚀 ShipSpace | B2B Client Portal SaaS
+  <br />
+    <a href="https://care-connect-shekhar.vercel.app" target="_blank">
+      <img src="public/ShipSpace.png" alt="ShipSpace Logo">
+    </a>
+  <br />
+
+  <h1 align="center">
+    ShipSpace | B2B Client Portal SaaS
+  </h1>
 
 A production-grade, multi-tenant B2B client portal engineered for agencies. Built with **Next.js 15**, **Payload CMS**, **tRPC**, and **React Query**.
 
