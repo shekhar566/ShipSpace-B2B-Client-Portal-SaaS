@@ -8,8 +8,7 @@ export const Footer = () => {
   return (
     <footer className="flex border-t border-neutral-200 justify-between items-center font-medium p-6 bg-white text-sm text-neutral-500">
       <div className="flex items-center gap-2 text-neutral-900">
-        <Image src="/arrow.svg" alt="shipspace" width={20} height={20} />
-
+        <img src="/arrow.svg" alt="shipspace" width="20" height="20" />
         <span className="font-semibold tracking-tight">ShipSpace</span>
         <span className="text-neutral-400 font-normal ml-1">
           &copy; {currentYear}
