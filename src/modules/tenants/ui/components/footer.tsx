@@ -10,9 +10,7 @@ export const Footer = () => {
       <div className="max-w-(--breakpoint-xl) mx-auto px-4 lg:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand */}
         <div className="flex items-center gap-2 text-neutral-900">
-          <div className="bg-neutral-900 p-1 rounded-md">
-            <Image src="/arrow.svg" alt="shipspace" width={20} height={20} />
-          </div>
+          <Image src="/arrow.svg" alt="shipspace" width={20} height={20} />
           <span className="font-semibold tracking-tight text-lg">
             ShipSpace
           </span>
