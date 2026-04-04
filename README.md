@@ -1,5 +1,6 @@
+<div align="center">
   <br />
-    <a href="https://care-connect-shekhar.vercel.app" target="_blank">
+    <a href="[Insert your live ShipSpace link here]" target="_blank">
       <img src="public/ShipSpace.png" alt="ShipSpace Logo">
     </a>
   <br />
@@ -8,9 +9,32 @@
     ShipSpace | B2B Client Portal SaaS
   </h1>
 
-A production-grade, multi-tenant B2B client portal engineered for agencies. Built with **Next.js 15**, **Payload CMS**, **tRPC**, and **React Query**.
+  <p align="center">
+    <strong>A production-grade, multi-tenant B2B client portal engineered for agencies.</strong>
+  </p>
 
-This project represents an architectural pivot from a legacy multi-tenant e-commerce codebase into a specialized, high-value SaaS environment. It focuses on secure data isolation, complex state management, and premium UI architecture.
+  <p align="center">
+    <a href="[Insert your live ShipSpace link here]">View Live Demo</a>
+    ·
+    <a href="[Insert your GitHub link here]/issues">Report Bug</a>
+  </p>
+</div>
+
+<div align="center"> 
+  <img src="https://img.shields.io/badge/Next.js%2015-black?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-Blue?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Payload_CMS-000000?style=for-the-badge&logo=payload&logoColor=white" />
+  <img src="https://img.shields.io/badge/tRPC-2596BE?style=for-the-badge&logo=trpc&logoColor=white" />
+  <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Stripe-Payments-635BFF?style=for-the-badge&logo=stripe&logoColor=white" />
+</div>
+
+<br />
+
+
+> **Note:** This project represents an architectural pivot from a legacy multi-tenant e-commerce codebase into a specialized, high-value SaaS environment. It focuses on secure data isolation, complex state management, and premium UI architecture.
 
 ---
 
@@ -21,40 +45,64 @@ This project represents an architectural pivot from a legacy multi-tenant e-comm
 - 🗂️ **Secure Deliverables Engine** – A protected, searchable library for project assets and high-res files routed dynamically by tenant ID.
 - 💳 **Centralized Billing & Invoices** – Engineered a premium SaaS billing table UI, prepared for Stripe webhook integration to manage client scopes and payments.
 - ⚡ **Aggressive Cache Optimization** – Custom authentication hooks that clear server-side Payload sessions and immediately nuke the client-side React Query cache to guarantee instant UI state updates.
-- 🎨 **Scalable Premium UI** – Custom design system featuring segmented control navigation, smooth transitions, and high-end rounded layouts using TailwindCSS.
-
----
-
-## 🧰 The Tech Stack
-
-- **Core:** Next.js 15 (App Router), React, TypeScript
-- **State & Data Fetching:** tRPC, Tanstack React Query
-- **Backend & Auth:** Payload CMS, Node.js
-- **Database:** MongoDB
-- **Styling:** Tailwind CSS, Shadcn UI, Lucide Icons
+- 🎨 **Scalable Premium UI** – Custom design system featuring segmented control navigation, smooth transitions, and high-end rounded layouts using Tailwind CSS.
 
 ---
 
 ## 🧠 Engineering Challenges Solved
 
 Instead of building another standard clone, I focused on the "hard" problems of product engineering:
-1. **The Architecture Pivot:** Successfully decoupling generic e-commerce dynamic routes into dedicated, secure B2B views (Deliverables, Invoices, Settings).
-2. **Type-Safe Full-Stack Communication:** Leveraging tRPC to bridge the Next.js frontend and Payload backend, eliminating type mismatch errors across the wire.
-3. **State Synchronization:** Handling the complex edge cases of user logouts in a deeply nested React Query environment to prevent stale data leaks across accounts.
+
+1. **The Architecture Pivot:** Successfully decoupling generic e-commerce dynamic routes into dedicated, secure B2B views (Deliverables, Invoices, Settings) while maintaining tenant isolation.
+2. **Type-Safe Full-Stack Communication:** Leveraging **tRPC** to bridge the Next.js frontend and Payload backend, completely eliminating type mismatch errors across the wire.
+3. **State Synchronization:** Handling the complex edge cases of user logouts in a deeply nested React Query environment. I engineered a solution to actively purge the cache to prevent stale data leaks across accounts.
+
+---
+
+## 🧰 The Tech Stack
+
+| Category | Technology |
+| --- | --- |
+| **Core Framework** | Next.js 15 (App Router), React, TypeScript |
+| **State & Data** | tRPC, Tanstack React Query |
+| **Backend & Auth** | Payload CMS, Node.js |
+| **Database** | MongoDB |
+| **Styling** | Tailwind CSS, Shadcn UI, Lucide Icons |
+| **Payments** |	Stripe API + Webhooks |
 
 ---
 
 ## ⚙️ Local Development
 
-```bash
-# Clone the repository
-git clone [https://github.com/YOURUSERNAME/shipspace-b2b-portal.git](https://github.com/YOURUSERNAME/shipspace-b2b-portal.git)
+### Prerequisites
+- Node.js (v18+)
+- Bun (or npm/yarn)
 
-# Navigate into the workspace
-cd shipspace-b2b-portal
+### Installation
 
-# Install dependencies
-bun install
+1. **Clone the repository**
+   ```bash
+   git clone (https://github.com/shekhar566/ShipSpace-B2B-Client-Portal-SaaS).git
+   cd shipspace-b2b-portal
 
-# Run the development server
-bun run dev
+2. **Install dependencies**
+   
+   ```bash
+   bun install
+3. **Set up environment variables
+   Create a .env file in the root directory**:
+
+   ```bash
+   PAYLOAD_SECRET=your_secret_key
+   DATABASE_URI=your_mongodb_connection_string
+   NEXT_PUBLIC_ROOT_DOMAIN="localhost:3000"
+   NEXT_PUBLIC_ENABLE_SUBDOMAIN_ROUTING:""
+   STRIPE_SECRET_KEY=
+   STRIPE_WEBHOOK_SECRET
+
+4. **Run the development server**
+   
+   ```bash
+   bun run dev
+
+  Open http://localhost:3000 to view the frontend, or navigate to /admin for the Payload CMS dashboard.
