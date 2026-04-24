@@ -33,9 +33,9 @@ export const SearchInput = ({ disabled, defaultValue, onChange }: Props) => {
     <div className="flex items-center gap-3 w-full">
       {/* Sleek Enterprise Search Input */}
       <div className="relative w-full">
-        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-500 gap-2.5" />
+        <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-zinc-500" />
         <Input
-          className="pl-9 h-11 bg-neutral-50 border-neutral-200 focus-visible:ring-neutral-900"
+          className="pl-10 h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl placeholder:text-zinc-600 transition-all shadow-inner"
           placeholder="Search invoices, deliverables, or projects..."
           disabled={disabled}
           value={searchValue}
@@ -47,9 +47,8 @@ export const SearchInput = ({ disabled, defaultValue, onChange }: Props) => {
       {session.data?.user && (
         <Button
           asChild
-          className="h-11 shrink-0 bg-neutral-900 text-white hover:bg-neutral-800 transition-colors hidden sm:flex"
+          className="h-11 shrink-0 bg-white text-black font-semibold hover:bg-zinc-200 rounded-xl transition-all hidden sm:flex active:scale-[0.98]"
         >
-          {/* We keep the /library route if that's where your downloads are, but label it "Deliverables" */}
           <Link prefetch href="/library">
             <FolderOpenIcon className="mr-2 size-4" />
             Deliverables

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { MenuIcon, CommandIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -25,8 +25,8 @@ const NavbarItem = ({ href, children, isActive }: NavbarItemProps) => {
       asChild
       variant="ghost"
       className={cn(
-        "bg-transparent hover:bg-neutral-100 rounded-full px-4 text-sm font-medium transition-colors",
-        isActive && "bg-neutral-100 text-neutral-900"
+        "bg-transparent hover:bg-zinc-800/50 rounded-full px-4 text-sm font-medium transition-colors text-zinc-400 hover:text-white",
+        isActive && "bg-zinc-800 text-white"
       )}
     >
       <Link href={href}>{children}</Link>
@@ -48,13 +48,21 @@ export const Navbar = () => {
   const session = useQuery(trpc.auth.session.queryOptions());
 
   return (
-    <nav className="h-19 flex border-b justify-between items-center bg-white px-6">
-      <Link href="/" className="flex items-center">
-        <div className="p-5.5 rounded-md px-15 pt-1.5">
-          {/* <CommandIcon className="size-5 text-white" */}
-          <Image src="/shipspace.svg" alt="shipspace" width={70} height={70} />
+    <nav className="h-20 flex border-b border-zinc-800/50 justify-between items-center bg-[#050505] px-6 sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+      <Link
+        href="/"
+        className="flex items-center gap-3 transition-opacity hover:opacity-80"
+      >
+        <div className="p-1.5 rounded-md bg-white/5 border border-white/10 backdrop-blur-sm">
+          <Image
+            src="/shipspace.svg"
+            alt="ShipSpace"
+            width={28}
+            height={28}
+            className="invert"
+          />
         </div>
-        <span className="text-xl font-bold tracking-tight text-neutral-900">
+        <span className="text-xl font-bold tracking-tight text-white">
           ShipSpace
         </span>
       </Link>
@@ -80,24 +88,21 @@ export const Navbar = () => {
 
       {/* Right Side Auth / Actions */}
       {session.data?.user ? (
-        <div className="hidden lg:flex items-center gap-4">
-          <span className="text-sm font-medium text-neutral-500">
+        <div className="hidden lg:flex items-center gap-6">
+          <span className="text-sm font-medium text-zinc-400">
             {session.data.user.email}
           </span>
-          <Button
-            asChild
-            className="rounded-full bg-neutral-900 text-white hover:bg-neutral-800 transition-colors px-6"
-          >
-            {/* <Link href="/">Client Portal</Link> */}
+          <div className="flex items-center gap-3">
+            {/* Note: Ensure LogoutButton accepts className props in its own file to match this styling */}
             <LogoutButton />
-          </Button>
+          </div>
         </div>
       ) : (
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-3">
           <Button
             asChild
             variant="ghost"
-            className="rounded-full hover:bg-neutral-100 transition-colors px-6"
+            className="rounded-full hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors px-6"
           >
             <Link prefetch href="/sign-in">
               Client Login
@@ -105,7 +110,7 @@ export const Navbar = () => {
           </Button>
           <Button
             asChild
-            className="rounded-full bg-neutral-900 text-white hover:bg-neutral-800 transition-colors px-6"
+            className="rounded-full bg-white text-black font-semibold hover:bg-zinc-200 active:scale-[0.98] transition-all px-6"
           >
             <Link prefetch href="/contact">
               Work With Us
@@ -118,7 +123,7 @@ export const Navbar = () => {
       <div className="flex lg:hidden items-center justify-center">
         <Button
           variant="ghost"
-          className="size-10 border-transparent p-0"
+          className="size-10 border-transparent p-0 text-zinc-400 hover:text-white hover:bg-zinc-800"
           onClick={() => setisSidebaropen(true)}
         >
           <MenuIcon className="size-5" />

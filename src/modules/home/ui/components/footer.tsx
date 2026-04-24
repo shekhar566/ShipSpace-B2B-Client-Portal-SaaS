@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex border-t border-neutral-200 justify-between items-center font-medium p-6 bg-white text-sm text-neutral-500">
-      <div className="flex items-center gap-2 text-neutral-900">
+    <footer className="flex border-t border-zinc-800/50 justify-between items-center font-medium p-6 bg-[#050505] text-sm text-zinc-500">
+      <div className="flex items-center gap-2 text-white">
         <svg
           width="20"
           height="20"
@@ -20,22 +19,16 @@ export const Footer = () => {
           />
         </svg>
         <span className="font-semibold tracking-tight">ShipSpace</span>
-        <span className="text-neutral-400 font-normal ml-1">
+        <span className="text-zinc-600 font-normal ml-1">
           &copy; {currentYear}
         </span>
       </div>
 
       <div className="flex items-center gap-6">
-        <Link
-          href="/privacy"
-          className="hover:text-neutral-900 transition-colors"
-        >
+        <Link href="/privacy" className="hover:text-white transition-colors">
           Privacy
         </Link>
-        <Link
-          href="/terms"
-          className="hover:text-neutral-900 transition-colors"
-        >
+        <Link href="/terms" className="hover:text-white transition-colors">
           Terms
         </Link>
       </div>

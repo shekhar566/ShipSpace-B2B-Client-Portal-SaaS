@@ -114,6 +114,7 @@
 //     </div>
 //   );
 // };
+
 "use client";
 
 import Link from "next/link";
@@ -142,10 +143,10 @@ export const Categories = ({ data }: Props) => {
   ];
 
   return (
-    <div className="w-full bg-white">
-      <div className="max-w-(--breakpoint-xl) mx-auto px-4 lg:px-12 flex">
-        {/* The Outer Rounded Box */}
-        <nav className="inline-flex items-center gap-1 p-1.5 bg-neutral-100 rounded-xl border border-neutral-200 shadow-inner overflow-x-auto scrollbar-hide">
+    <div className="w-full bg-[#050505] border-b border-zinc-800/50 py-4">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 flex">
+        {/* The Outer Premium Container */}
+        <nav className="inline-flex items-center gap-1 p-1 bg-zinc-900/40 rounded-xl border border-zinc-800/50 backdrop-blur-md overflow-x-auto scrollbar-hide">
           {tabs.map((tab) => {
             const isActive =
               tab.href === "/"
@@ -159,16 +160,16 @@ export const Categories = ({ data }: Props) => {
                 className={cn(
                   "group flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-all duration-200",
                   isActive
-                    ? "bg-white text-neutral-900 shadow-sm border border-neutral-200/50" // The active "raised card" look
-                    : "text-neutral-500 hover:text-neutral-900 hover:bg-neutral-200/50" // The smooth hover state
+                    ? "bg-zinc-800 text-white shadow-sm border border-zinc-700/50" // Elevated active state
+                    : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/40" // Smooth hover state
                 )}
               >
                 <tab.icon
                   className={cn(
                     "size-4 transition-colors",
                     isActive
-                      ? "text-neutral-900"
-                      : "text-neutral-400 group-hover:text-neutral-600"
+                      ? "text-white"
+                      : "text-zinc-500 group-hover:text-zinc-300"
                   )}
                 />
                 {tab.name}
