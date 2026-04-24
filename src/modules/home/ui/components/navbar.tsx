@@ -73,7 +73,6 @@ export const Navbar = () => {
         onOpenChange={setisSidebaropen}
       />
 
-      {/* Center Links (Hidden on mobile) */}
       <div className="items-center gap-1 hidden lg:flex">
         {navbarItems.map((item) => (
           <NavbarItem
@@ -86,14 +85,12 @@ export const Navbar = () => {
         ))}
       </div>
 
-      {/* Right Side Auth / Actions */}
       {session.data?.user ? (
         <div className="hidden lg:flex items-center gap-6">
           <span className="text-sm font-medium text-zinc-400">
             {session.data.user.email}
           </span>
           <div className="flex items-center gap-3">
-            {/* Note: Ensure LogoutButton accepts className props in its own file to match this styling */}
             <LogoutButton />
           </div>
         </div>
@@ -119,7 +116,6 @@ export const Navbar = () => {
         </div>
       )}
 
-      {/* Mobile Menu Toggle */}
       <div className="flex lg:hidden items-center justify-center">
         <Button
           variant="ghost"

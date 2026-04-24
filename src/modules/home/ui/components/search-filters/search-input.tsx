@@ -31,7 +31,6 @@ export const SearchInput = ({ disabled, defaultValue, onChange }: Props) => {
 
   return (
     <div className="flex items-center gap-3 w-full">
-      {/* Sleek Enterprise Search Input */}
       <div className="relative w-full">
         <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-zinc-500" />
         <Input
@@ -43,7 +42,6 @@ export const SearchInput = ({ disabled, defaultValue, onChange }: Props) => {
         />
       </div>
 
-      {/* Authenticated Action Button */}
       {session.data?.user && (
         <Button
           asChild

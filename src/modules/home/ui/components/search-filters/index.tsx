@@ -10,12 +10,10 @@ export const SearchFilters = () => {
   return (
     <div className="w-full bg-[#050505] border-b border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* Left Side: Premium Segmented Navigation */}
         <div className="w-full md:w-auto overflow-x-auto scrollbar-hide">
           <Categories />
         </div>
 
-        {/* Right Side: Search Bar */}
         <div className="w-full md:w-80 shrink-0">
           <SearchInput
             defaultValue={filters.search}
