@@ -55,17 +55,14 @@ export const SignInView = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-6 font-sans text-white relative overflow-hidden">
-      {/* Background Glow - Cinematic Depth */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-blue-600/10 blur-[120px] pointer-events-none" />
 
-      {/* Top Left Logo */}
       <div className="absolute top-8 left-8 sm:left-12">
         <Link
           href="/"
           className="transition-transform hover:scale-105 block opacity-80 hover:opacity-100"
         >
           <div className="p-1.5 rounded-md bg-white/5 border border-white/10 backdrop-blur-sm">
-            {/* Note: Added 'invert' assuming your original SVG was black for the white background */}
             <Image
               src="/shipspace.svg"
               alt="ShipSpace"
@@ -77,8 +74,7 @@ export const SignInView = () => {
         </Link>
       </div>
 
-      <div className="w-full max-w-md space-y-8 relative z-10">
-        {/* Brand Header */}
+      <div className="w-full max-w-md space-y-8 relative z-10 my-12">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-white">
             Welcome back to the Space.
@@ -88,12 +84,10 @@ export const SignInView = () => {
           </p>
         </div>
 
-        {/* Login Card */}
         <div className="bg-zinc-900/40 border border-zinc-800/50 p-8 rounded-2xl backdrop-blur-xl shadow-2xl">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="space-y-4">
-                {/* Email Field */}
                 <FormField
                   control={form.control}
                   name="email"
@@ -105,6 +99,8 @@ export const SignInView = () => {
                       <FormControl>
                         <Input
                           {...field}
+                          type="email"
+                          autoComplete="email"
                           className="h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl px-4 placeholder:text-zinc-700 transition-all"
                           placeholder="you@agency.com"
                         />
@@ -114,7 +110,6 @@ export const SignInView = () => {
                   )}
                 />
 
-                {/* Password Field */}
                 <FormField
                   control={form.control}
                   name="password"
@@ -135,6 +130,7 @@ export const SignInView = () => {
                         <Input
                           {...field}
                           type="password"
+                          autoComplete="current-password"
                           className="h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl px-4 placeholder:text-zinc-700 transition-all"
                           placeholder="••••••••"
                         />
@@ -145,7 +141,6 @@ export const SignInView = () => {
                 />
               </div>
 
-              {/* Submit Button */}
               <Button
                 disabled={login.isPending}
                 type="submit"
@@ -166,7 +161,7 @@ export const SignInView = () => {
                 )}
               </Button>
             </form>
-            {/* Divider */}
+
             <div className="relative py-2">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t border-zinc-800" />
@@ -178,7 +173,6 @@ export const SignInView = () => {
               </div>
             </div>
 
-            {/* OAuth Buttons */}
             <div className="grid grid-cols-2 gap-4">
               <Button
                 type="button"
@@ -225,7 +219,6 @@ export const SignInView = () => {
           </Form>
         </div>
 
-        {/* Secondary Action */}
         <p className="text-center text-sm text-zinc-500">
           New here?{" "}
           <Link
@@ -237,8 +230,7 @@ export const SignInView = () => {
         </p>
       </div>
 
-      {/* Minimalist Footer */}
-      <footer className="absolute bottom-8 flex gap-6 text-[11px] text-zinc-600 uppercase tracking-widest font-medium">
+      <footer className="relative z-10 mt-8 pb-8 flex flex-wrap justify-center gap-6 text-[11px] text-zinc-600 uppercase tracking-widest font-medium">
         <span>© {new Date().getFullYear()} ShipSpace</span>
         <span className="w-1 h-1 bg-zinc-800 rounded-full my-auto" />
         <Link href="/privacy" className="hover:text-zinc-400 transition-colors">

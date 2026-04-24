@@ -59,10 +59,8 @@ export const SignUpView = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-6 font-sans text-white relative overflow-hidden">
-      {/* Background Glow - Cinematic Depth */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-blue-600/10 blur-[120px] pointer-events-none" />
 
-      {/* Top Left Logo */}
       <div className="absolute top-8 left-8 sm:left-12">
         <Link
           href="/"
@@ -81,7 +79,6 @@ export const SignUpView = () => {
       </div>
 
       <div className="w-full max-w-md space-y-8 relative z-10 my-12">
-        {/* Brand Header */}
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-white">
             Initialize your Space.
@@ -91,12 +88,10 @@ export const SignUpView = () => {
           </p>
         </div>
 
-        {/* Registration Card */}
         <div className="bg-zinc-900/40 border border-zinc-800/50 p-8 rounded-2xl backdrop-blur-xl shadow-2xl">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="space-y-4">
-                {/* Username / Handle Field */}
                 <FormField
                   control={form.control}
                   name="username"
@@ -107,12 +102,13 @@ export const SignUpView = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
+                          autoComplete="username"
                           {...field}
                           className="h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl px-4 placeholder:text-zinc-700 transition-all"
                           placeholder="e.g. apex-law"
                         />
                       </FormControl>
-                      {/* Dynamic Handle Preview */}
+
                       <div className="h-4 ml-1">
                         {showPreview ? (
                           <p className="text-xs text-blue-400/80 font-medium animate-in fade-in slide-in-from-top-1">
@@ -127,7 +123,6 @@ export const SignUpView = () => {
                   )}
                 />
 
-                {/* Email Field */}
                 <FormField
                   control={form.control}
                   name="email"
@@ -138,6 +133,8 @@ export const SignUpView = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
+                          type="email"
+                          autoComplete="email"
                           {...field}
                           className="h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl px-4 placeholder:text-zinc-700 transition-all"
                           placeholder="you@agency.com"
@@ -148,7 +145,6 @@ export const SignUpView = () => {
                   )}
                 />
 
-                {/* Password Field */}
                 <FormField
                   control={form.control}
                   name="password"
@@ -159,6 +155,7 @@ export const SignUpView = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
+                          autoComplete="new-password"
                           {...field}
                           type="password"
                           className="h-11 bg-zinc-950 border-zinc-800 text-white focus-visible:ring-blue-500/50 focus-visible:border-blue-500/50 rounded-xl px-4 placeholder:text-zinc-700 transition-all"
@@ -171,7 +168,6 @@ export const SignUpView = () => {
                 />
               </div>
 
-              {/* Submit Button */}
               <Button
                 disabled={register.isPending}
                 type="submit"
@@ -192,7 +188,6 @@ export const SignUpView = () => {
                 )}
               </Button>
 
-              {/* Divider for OAuth Demo */}
               <div className="relative py-2">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t border-zinc-800" />
@@ -204,7 +199,6 @@ export const SignUpView = () => {
                 </div>
               </div>
 
-              {/* OAuth Buttons (Demo) */}
               <div className="grid grid-cols-2 gap-4">
                 <Button
                   type="button"
@@ -252,7 +246,6 @@ export const SignUpView = () => {
           </Form>
         </div>
 
-        {/* Secondary Action */}
         <p className="text-center text-sm text-zinc-500">
           Already have an account?{" "}
           <Link
@@ -264,7 +257,6 @@ export const SignUpView = () => {
         </p>
       </div>
 
-      {/* Minimalist Footer */}
       <footer className="absolute bottom-8 flex gap-6 text-[11px] text-zinc-600 uppercase tracking-widest font-medium">
         <span>© {new Date().getFullYear()} ShipSpace</span>
         <span className="w-1 h-1 bg-zinc-800 rounded-full my-auto" />
